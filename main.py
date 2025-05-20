@@ -38,19 +38,19 @@ CONFIG_FILE = "whoosh_config.json"
 # Настройки по умолчанию
 BASE_URL = "https://api.whoosh.bike"
 COGNITO_URL = "https://cognito.whoosh.bike/"
-REGION_ID = "773ff572-49a8-4619-b291-290f1f3e4271"
+REGION_ID = "773ff572-49a8-4619-b291-290f1f3e4271" # Москва (ids_regions.json)
 CLIENT_UUID = "c027fc25-d406-33c4-867a-dc2e3d071b60"
 CLIENT_ID = "7g1h82vpnjve0omfq1ssko18gl"
 
 # Координаты пользователя (неизменные, как указано в требованиях)
-DEFAULT_LAT = 55.766845
-DEFAULT_LNG = 37.585954
+DEFAULT_LAT = 55.766845 # Просто рандомная парковка
+DEFAULT_LNG = 37.585954 # Просто рандомная парковка
 
 # Координаты для завершения поездки (неизменные, как указано в требованиях)
 END_COORDINATES = {
     "lat": 55.767656,
     "lng": 37.587952
-}
+} # Просто рандомная парковка
 
 
 # Функция для загрузки токенов из файла
@@ -66,7 +66,7 @@ def load_tokens():
     return {
         "access_token": None,
         "id_token": None,
-        "refresh_token": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.ZayegTCQ0WNjKwIbXRHb0KRkn3vLBUy3fbZob8x7_5fheeEdruI-utbDWvFYQAcZS0ZA6mFIjF24IkNb92noOPYmZTNGXxfqPMcuAIHM_ZfZzG_GzipALvTvCG0UOo-4YOGJfMKxtr94JToTE7tlKSyjk3VCGEchNWpiiO5wewdMz45EdSR5YLp-k7owqdmVA9dhZ1k3WC1LrV4MhKdsAlckF-fYTGLkwQZlByEp_2wabKVMHO6pQdZ17voehd3vRw0MX6DNR-nqOiZeYK_QTiHKs0RFUfDuthgh6iGHgk5gSEmjuuBvBsi8IJMvqdFVBFPNss2jcUWSXfZN_8tCgg.Uod42xmrKHbXHlOG.janCXpIgrMfSEG95BwbzbVb8ljjeBIzeg41OQR9RYNOxRMVC_n40ajIiWvkTE2L3_1F0MYbr75wmTIObpH-Dy46ZW-arsKDHqrtNyDovvU2LCio8ubQY_Y_02BMcmKZS_z-ce-XNXkdvIlI2-lOYoKX4K3cx6yRLUZv7ugvrR8VBYulwmdqd90RUugAM_0Ra__B-K9QeMDFTAncUaGvVNE_CzesdFUBckXpRb1Q-oE3EFVRcde0-sTkjc4H_c5q6LKnHMORtb-NA1KDNnEj8Og1bNbSPbFuNW5oletmfM2t8mvtdlYTnvW70f0y1IukduUVOKkxnAct8_S3q_cX0h9CDYpkiX5A2wVboysOP_hNEIqxrlkrMW-t0EbAn6BQHYC9EDAEV_Klyn6_3HKWE-WYbOUw0P4WxwKZLW3sv9wOWhh_WgFAs_itTIZ_s-iiR-0DOxelLdW7odp_c8cUCTpnVBhJVu_UcekfaEOjSfnOsiRprgqobH4UDeNsq4kJIh7si43Pob7q6THMlAngC3kSTJPdqQFSik4aLT2UKpwRa-pPe9tCBwlwcsHHeMIidD7bFBmcaqj5rcOBBpPujciAZflStWOhjk9PD6jzfGbIE5aYfbfsLxlBE8Re_rYIdVKiJIIIhjvtvGzn2J_G1DIKj4lw4DHaewmC0XpQICvbR5tjPhUc-EKqQVKOMQIBBToE_VYg42L6RPP0pyjhS5QJ6un8x_Wzz6B7Gpk_3uFFVvF9R-_diyGtBjZ75gyiah50eM-P0BzvvFCJ5lrdruqkiDBMITqWC4VELQDjig8T3pqdufeyT3yUFVBeoAK3OICqC33QPhKsd1OjlIX2FyaEvkk4gmOo8Z0L2AKZLftotwWayybuKlQtZNEYhGKLqT1X-OCAR8nog9k0Log_mxyuxpje8VYQxxDNaOF68T-CW9rQHlwQ3BCo1iuf23ShUh7osFpL1KNDQzD9NSOqf2snnwTM43UNvZbQg1jaWe6ImR8ZGAWaCcpI43oCH5FR0lbLLo1QScGW-Xqf8ceMTZqYZ781inhIQMFPPpFhxbjSN7ZmmzFmEq078FBQ6tA_19LejdC8I8ENi3e7iBfzk2s0O8pSSRSrqaKdlRPf_V39RmLBovcYZqtIZuaais_s-r7U8m-rEZqKF0j_-oOPEamXwwCknUaGY5YFZC2EicBOPxgfoCI2yIzk2IyAMgkSWLo0Ib_B6HZxhcmmSpdx22c0ufGadAoLfSUMTKyrlsKcKenz6dKX4L_YhYNu5bR0Ki8Lj_Z55j2QOyo0kFXKbbvy3jvbVcwIfxmvds0HOCE_0i0hX-SZwLhecf-ts8g.SHGIIgfcM22Z-HPrq33fiA"
+        "refresh_token": ""
     }
 
 
@@ -177,6 +177,8 @@ async def make_request(
                 response = await client.get(url, headers=headers, params=params)
             elif method.lower() == "post":
                 response = await client.post(url, headers=headers, json=json_data, params=params)
+            elif method.lower() == "delete":  # Добавлена поддержка метода DELETE
+                response = await client.delete(url, headers=headers, params=params)
             else:
                 raise ValueError(f"Неподдерживаемый метод: {method}")
 
@@ -524,6 +526,434 @@ async def manual_refresh_tokens():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Ошибка при обновлении токенов: {str(e)}")
 
+
+# Добавим эти эндпоинты в существующий код API
+
+# Эндпоинт для получения данных аккаунта пользователя
+@app.get("/api/account", summary="Получение данных аккаунта пользователя")
+async def get_account_info():
+    """
+    Возвращает информацию о текущем пользователе:
+    - Имя и контактные данные
+    - Количество поездок
+    - Статус верификации
+    - Другие данные профиля
+    """
+    url = f"{BASE_URL}/users/logged"
+
+    try:
+        response = await make_request("get", url)
+        user_data = response.get("user", {})
+
+        # Формируем более удобный и компактный ответ
+        return {
+            "id": user_data.get("id", ""),
+            "name": user_data.get("name", ""),
+            "phone": user_data.get("phone", ""),
+            "email": user_data.get("email", ""),
+            "locale": user_data.get("locale", ""),
+            "trips_count": user_data.get("tripsCount", 0),
+            "birthdate": user_data.get("birthdate", ""),
+            "verified": user_data.get("verification", "") == "DONE",
+            "verified_birthdate": user_data.get("verifiedBirthdate", False),
+            "gender": user_data.get("gender", ""),
+            "verified_gender": user_data.get("verifiedGender", False),
+            "auth_types": user_data.get("authTypes", []),
+            "debtor": user_data.get("debtor", False)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при получении данных аккаунта: {str(e)}")
+
+
+# Эндпоинт для получения платежных методов
+@app.get("/api/payment_methods", summary="Получение платежных методов пользователя")
+async def get_payment_methods():
+    """
+    Возвращает список платежных методов пользователя:
+    - ID метода оплаты
+    - Тип карты
+    - Маскированный номер карты
+    - Статус (активна/неактивна)
+    - Предпочтительный метод оплаты
+    """
+    url = f"{BASE_URL}/payment/payment-methods"
+    params = {"regionId": REGION_ID}
+
+    try:
+        response = await make_request("get", url, params=params)
+        payment_methods = response.get("paymentMethods", [])
+
+        result = []
+        for method in payment_methods:
+            card_binding = method.get("cardBinding", {})
+            card_info = card_binding.get("card", {})
+
+            result.append({
+                "id": card_binding.get("id", ""),
+                "type": method.get("type", ""),
+                "card_type": card_info.get("cardType", ""),
+                "number": card_info.get("number", ""),
+                "rbs_type": card_binding.get("rbsType", ""),
+                "status": card_binding.get("status", ""),
+                "preferable": card_binding.get("preferable", False),
+                "last_successful_charge": card_binding.get("lastSuccessfulCharge", False),
+                "created_at": card_binding.get("createdAt", "")
+            })
+
+        return {
+            "payment_methods": result,
+            "count": len(result),
+            "has_preferred_method": any(method["preferable"] for method in result)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при получении платежных методов: {str(e)}")
+
+
+# Эндпоинт для получения подписок пользователя
+@app.get("/api/subscriptions", summary="Получение подписок пользователя")
+async def get_user_subscriptions():
+    """
+    Возвращает информацию о подписках пользователя:
+    - Активные подписки
+    - Истекшие подписки
+    - Отложенные подписки
+    - Детали каждой подписки
+    """
+    url = f"{BASE_URL}/subscriptions/user"
+
+    try:
+        response = await make_request("get", url)
+        subscriptions = response.get("userSubscriptions", [])
+
+        # Группируем подписки по статусу
+        active_subscriptions = []
+        expired_subscriptions = []
+        on_hold_subscriptions = []
+
+        for sub in subscriptions:
+            status = sub.get("status", "")
+
+            subscription_data = {
+                "id": sub.get("id", ""),
+                "title": sub.get("title", ""),
+                "name": sub.get("name", ""),
+                "status": status,
+                "valid_from": sub.get("validFrom", ""),
+                "valid_to": sub.get("validTo", ""),
+                "price": sub.get("price", {}).get("amount", 0),
+                "currency": sub.get("price", {}).get("currency", ""),
+                "auto_prolongation": sub.get("autoProlongation", False),
+                "is_trial": sub.get("isTrial", False)
+            }
+
+            if status == "ACTIVE":
+                active_subscriptions.append(subscription_data)
+            elif status == "EXPIRED":
+                expired_subscriptions.append(subscription_data)
+            elif status == "ON_HOLD":
+                on_hold_subscriptions.append(subscription_data)
+
+        return {
+            "active_subscriptions": active_subscriptions,
+            "expired_subscriptions": expired_subscriptions,
+            "on_hold_subscriptions": on_hold_subscriptions,
+            "has_active_subscription": len(active_subscriptions) > 0,
+            "active_until": active_subscriptions[0].get("valid_to") if active_subscriptions else None
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при получении подписок: {str(e)}")
+
+
+# Эндпоинт для получения доступных предложений подписок
+@app.get("/api/subscription_offers", summary="Получение доступных предложений подписок")
+async def get_subscription_offers():
+    """
+    Возвращает информацию о доступных подписках для покупки:
+    - Стоимость подписки
+    - Преимущества подписки
+    - Описание и условия
+    """
+    url = f"{BASE_URL}/offer/subscriptions"
+
+    try:
+        response = await make_request("get", url)
+        offers = response.get("subscriptionOffers", [])
+
+        result = []
+        for offer in offers:
+            price_info = offer.get("price", {})
+
+            result.append({
+                "id": offer.get("internalId", ""),
+                "title": offer.get("title", ""),
+                "name": offer.get("name", ""),
+                "is_trial": offer.get("isTrial", False),
+                "price": price_info.get("amount", 0),
+                "currency": price_info.get("currency", ""),
+                "version": offer.get("version", 0),
+                "features": offer.get("allFeatures", []),
+                "illustration_url": offer.get("illustration", {}).get("lightThemeUrl", "")
+            })
+
+        return {
+            "subscription_offers": result,
+            "count": len(result)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при получении предложений подписок: {str(e)}")
+
+
+from uuid import uuid4
+from typing import Optional, List
+
+
+# Модели данных для бронирования
+class Position(BaseModel):
+    lat: float
+    lng: float
+
+
+class Amount(BaseModel):
+    amount: int
+    currency: str = "RUB"
+
+
+class BaseTariff(BaseModel):
+    name: str
+    type: str
+    rate: Amount
+    reservationTime: Optional[int] = None
+    description: Optional[str] = None
+
+
+class Tariff(BaseModel):
+    baseTariff: BaseTariff
+    rate: Amount
+
+
+class ReservationRequest(BaseModel):
+    insuranceRequired: bool = False
+    position: Position
+    tariffs: List[Tariff]
+    tariffsToken: str
+
+
+# Модель для отмены бронирования
+class CancelReservationResponse(BaseModel):
+    reservation_id: str
+
+
+# Модель для начала поездки по бронированию
+class StartReservedTripRequest(BaseModel):
+    deviceCode: str
+
+
+# Эндпоинт для бронирования самоката
+@app.post("/api/reserve_scooter/{scooter_code}", summary="Бронирование самоката")
+async def reserve_scooter(scooter_code: str, request: Optional[ReservationRequest] = None):
+    """
+    Бронирует самокат на 20 минут.
+    После бронирования вы можете начать поездку в течение этого времени.
+    """
+    try:
+        # Получаем информацию о самокате
+        device_state_url = f"{BASE_URL}/devices/state"
+        device_params = {
+            "code": scooter_code,
+            "lat": DEFAULT_LAT,
+            "lng": DEFAULT_LNG,
+            "scanType": "MANUAL"
+        }
+
+        device_info = await make_request("get", device_state_url, params=device_params)
+
+        if "device" not in device_info:
+            raise HTTPException(status_code=404, detail="Самокат не найден")
+
+        device_id = device_info.get("device", {}).get("id")
+
+        # Получаем тарифы для самоката
+        tariff_url = f"{BASE_URL}/tariffs/tariff/minute-pack"
+        tariff_params = {"device": device_id}
+
+        tariffs_info = await make_request("get", tariff_url, params=tariff_params)
+
+        # Если запрос не содержит данных о тарифах, используем полученные
+        if request is None:
+            position = Position(lat=DEFAULT_LAT, lng=DEFAULT_LNG)
+            tariffs = tariffs_info.get("tariffs", [])
+            tariffs_token = tariffs_info.get("tariffsToken", "")
+
+            # Создаем запрос на бронирование
+            json_data = {
+                "insuranceRequired": False,
+                "position": position.dict(),
+                "tariffs": tariffs,
+                "tariffsToken": tariffs_token
+            }
+        else:
+            json_data = request.dict()
+
+        # Выполняем запрос на бронирование
+        reservation_url = f"{BASE_URL}/reservations/{scooter_code}"
+        reservation_response = await make_request("post", reservation_url, json_data=json_data)
+
+        if "reservation" not in reservation_response:
+            raise HTTPException(status_code=500, detail="Не удалось забронировать самокат")
+
+        reservation = reservation_response.get("reservation", {})
+
+        # Форматируем ответ
+        return {
+            "success": True,
+            "reservation_id": reservation.get("id"),
+            "scooter_code": scooter_code,
+            "device_id": reservation.get("device", {}).get("id"),
+            "created_at": reservation.get("createdAt"),
+            "expires_at": reservation.get("expiresAt"),
+            "battery_level": reservation.get("device", {}).get("battery", {}).get("power"),
+            "scooter_model": reservation.get("device", {}).get("model"),
+            "coordinates": reservation.get("device", {}).get("state", {}).get("position", {}).get("point", {}),
+            "message": f"Самокат успешно забронирован до {reservation.get('expiresAt')}"
+        }
+
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при бронировании самоката: {str(e)}")
+
+
+# Эндпоинт для отмены бронирования
+@app.delete("/api/cancel_reservation/{reservation_id}", summary="Отмена бронирования")
+async def cancel_reservation(reservation_id: str):
+    """
+    Отменяет бронирование самоката.
+    """
+    try:
+        # Выполняем запрос на отмену бронирования
+        cancel_url = f"{BASE_URL}/reservations/{reservation_id}"
+        cancel_response = await make_request("delete", cancel_url)
+
+        if "reservation" not in cancel_response:
+            raise HTTPException(status_code=500, detail="Не удалось отменить бронирование")
+
+        reservation = cancel_response.get("reservation", {})
+
+        # Проверяем статус отмены
+        if reservation.get("status") != "CANCELLED":
+            raise HTTPException(status_code=500,
+                                detail="Не удалось отменить бронирование, статус: " + reservation.get("status", ""))
+
+        # Форматируем ответ
+        return {
+            "success": True,
+            "reservation_id": reservation.get("id"),
+            "created_at": reservation.get("createdAt"),
+            "started_at": reservation.get("startedAt"),
+            "finished_at": reservation.get("finishedAt"),
+            "status": "CANCELLED",
+            "message": "Бронирование успешно отменено"
+        }
+
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при отмене бронирования: {str(e)}")
+
+
+# Эндпоинт для начала поездки по бронированию
+@app.post("/api/start_reserved_trip", summary="Начало поездки по бронированию")
+async def start_reserved_trip(request: StartReservedTripRequest):
+    """
+    Начинает поездку по ранее забронированному самокату.
+    """
+    try:
+        # Формируем запрос на начало поездки по бронированию
+        trips_url = f"{BASE_URL}/trips"
+        position = Position(lat=DEFAULT_LAT, lng=DEFAULT_LNG)
+
+        json_data = {
+            "deviceCode": request.deviceCode,
+            "startTripType": "MANUAL",
+            "insuranceRequired": False,
+            "position": position.dict(),
+            "tariffs": [],  # Тарифы уже заданы при бронировании
+            "debugData": {
+                "sourceType": "reservation_scan",
+                "uuid": str(uuid4()),
+                "processId": 3079
+            }
+        }
+
+        # Выполняем запрос на начало поездки
+        trip_response = await make_request("post", trips_url, json_data=json_data)
+
+        if "trip" not in trip_response:
+            raise HTTPException(status_code=500, detail="Не удалось начать поездку по бронированию")
+
+        trip = trip_response.get("trip", {})
+        reservation = trip.get("reservation", {})
+
+        # Форматируем ответ
+        return {
+            "success": True,
+            "trip_id": trip.get("id"),
+            "scooter_code": trip.get("device", {}).get("code"),
+            "created_at": trip.get("createdAt"),
+            "status": trip.get("status"),
+            "battery_level": trip.get("device", {}).get("battery", {}).get("power"),
+            "reservation": {
+                "id": reservation.get("id"),
+                "created_at": reservation.get("createdAt"),
+                "status": reservation.get("status", "COMPLETED")
+            },
+            "message": "Поездка по бронированию успешно начата"
+        }
+
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при начале поездки по бронированию: {str(e)}")
+
+
+# Эндпоинт для получения информации о текущем бронировании
+@app.get("/api/active_reservations", summary="Получение информации о текущих бронированиях")
+async def get_active_reservations():
+    """
+    Возвращает информацию о текущих бронированиях пользователя.
+    """
+    try:
+        # Для получения активных бронирований можно использовать эндпоинт активных поездок
+        # и проверить, есть ли поездка с активным бронированием
+        active_trips_url = f"{BASE_URL}/users/logged/active-trips"
+        active_trips = await make_request("get", active_trips_url)
+
+        trips = active_trips.get("trips", [])
+        active_reservations = []
+
+        for trip in trips:
+            # Если есть активное бронирование в поездке
+            if "reservation" in trip:
+                reservation = trip.get("reservation", {})
+
+                if reservation.get("status") != "CANCELLED" and reservation.get("status") != "COMPLETED":
+                    active_reservations.append({
+                        "reservation_id": reservation.get("id"),
+                        "scooter_code": trip.get("device", {}).get("code"),
+                        "created_at": reservation.get("createdAt"),
+                        "expires_at": reservation.get("expiresAt"),
+                        "status": reservation.get("status"),
+                        "device_id": trip.get("device", {}).get("id"),
+                        "battery_level": trip.get("device", {}).get("battery", {}).get("power"),
+                    })
+
+        return {
+            "active_reservations": active_reservations,
+            "count": len(active_reservations)
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Ошибка при получении активных бронирований: {str(e)}")
 
 @app.get("/{full_path:path}")
 async def serve_react_app(full_path: str, request: Request):
