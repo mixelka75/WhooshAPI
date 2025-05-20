@@ -2,15 +2,18 @@
 
 Неофициальное API сервиса аренды самокатов Whoosh с интегрированным Telegram mini app.
 
-![](/home/mixel/PycharmProjects/WhooshAPI/exapmlesIMG/1.png)![](/home/mixel/PycharmProjects/WhooshAPI/exapmlesIMG/2.png)
+![](https://github.com/mixelka75/WhooshAPI/blob/dev/exapmlesIMG/1.png)
+![](https://github.com/mixelka75/WhooshAPI/blob/dev/exapmlesIMG/2.png)
 
-[Документация](DocsAPI.md)
+[Документация API](DocsAPI.md)
 
 ## Описание проекта
 
 WhooshAPI представляет собой обертку вокруг официального API сервиса аренды электросамокатов Whoosh. Проект состоит из двух частей:
 1. **FastAPI бэкенд** - обрабатывает запросы и транслирует их в официальное API Whoosh
 2. **React Telegram mini app** - клиентское приложение для пользователей Telegram, позволяющее арендовать самокаты без установки официального приложения
+
+   **На данный момент нет функционала брони в Mini App в API она есть**
 
 Проект позволяет интегрировать сервисы аренды самокатов Whoosh в различные приложения, в частности, реализована интеграция с Telegram через Telegram Web App API.
 
@@ -35,6 +38,8 @@ WhooshAPI/
 ## Функциональность
 
 ### Бэкенд (FastAPI):
+**!!Получение токена будет позже**
+
 - Авторизация пользователей через токены Whoosh
 - Автоматическое обновление токенов авторизации
 - Проверка наличия пакетов минут
