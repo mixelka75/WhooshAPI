@@ -2,7 +2,7 @@
 
 Неофициальное API сервиса аренды самокатов Whoosh с интегрированным Telegram mini app.
 
-<img src="https://github.com/mixelka75/WhooshAPI/blob/dev/exapmlesIMG/1.png" width="25%"><img src="https://github.com/mixelka75/WhooshAPI/blob/dev/exapmlesIMG/2.png" width="25%">
+<img src="https://github.com/mixelka75/WhooshAPI/blob/dev/exapmlesIMG/1.png" width="40%"><img src="https://github.com/mixelka75/WhooshAPI/blob/dev/exapmlesIMG/2.png" width="40%">
 
 [Документация API](DocsAPI.md)
 
